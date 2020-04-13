@@ -55,11 +55,6 @@ p {
     max-width: 1012px;
   }
 }
-@media (min-width: 1092px) {
-  .container {
-    max-width: 1204px;
-  }
-}
 .row {
   display: flex;
   flex-wrap: wrap;
