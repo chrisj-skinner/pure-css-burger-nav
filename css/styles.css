@@ -1,0 +1,223 @@
+/********** BASE **********/
+html {
+  box-sizing: border-box;
+  -ms-overflow-style: scrollbar;
+  font-size: 62.5%;
+  overflow-x: hidden; /* The key to getting the scrolling opacity background */
+  -webkit-text-size-adjust: 100%;
+  font-variant-ligatures: none;
+  -webkit-font-variant-ligatures: none;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+body {
+  font-size: 16px;
+  font-family: Helvetica, sans-serif;
+  height: 100%;
+  min-height: 100vh;
+}
+@media (max-width: 575.98px) {
+  body {
+    overflow: hidden;
+  }
+}
+
+h1 {
+  margin: 30px 0 20px;
+  font-size: 32px;
+}
+p {
+  margin-bottom: 10px;
+}
+
+/********** GRID **********/
+.container {
+  width: 100%;
+  padding-right: 19px;
+  padding-left: 19px;
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 1424px;
+}
+@media (min-width: 576px) {
+  .container {
+    max-width: 600px;
+  }
+}
+@media (min-width: 768px) {
+  .container {
+    max-width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    max-width: 1012px;
+  }
+}
+@media (min-width: 1092px) {
+  .container {
+    max-width: 1204px;
+  }
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+.col {
+  flex-basis: 0;
+  flex-grow: 1;
+  max-width: 100%;
+  position: relative;
+  width: 100%;
+  min-height: 1px;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+.col-12 {
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+
+/********** HEADER **********/
+.header {
+  background-color: #ffffff;
+  height: 100px;
+  position: relative;
+}
+.header:before {
+  content: '';
+  display: block;
+  background-color: #dddddd;
+  height: 1px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+.header-logo {
+  margin: 15px 0;
+  height: 70px;
+  width: auto;
+}
+
+/********** NAV **********/
+.nav {
+  display: none;
+  background-color: rgba(1, 1, 1, 0.72);
+  position: absolute;
+  left: -19px;
+  top: 100px;
+  width: 100vw;
+  z-index: 1;
+}
+@media (min-width: 576px) {
+  .nav {
+    display: block;
+    position: relative;
+    top: 0;
+    left: 0;
+    width: auto;
+    height: auto;
+    background-color: #ffffff;
+    float: right;
+  }
+}
+.nav-menu {
+  list-style: none;
+  top: 0;
+  left: 0;
+  margin-left: 6%;
+  width: 94%;
+  padding: 25px 0;
+  background-color: #ffffff;
+}
+@media (min-width: 576px) {
+  .nav-menu {
+    position: relative;
+    margin: 45px 0 0 0;
+    width: auto;
+    padding: 0;
+  }
+}
+.nav-item {
+  display: block;
+  padding-left: 0;
+  margin: 0;
+}
+.nav-item:before {
+  content: none;
+}
+@media (min-width: 576px) {
+  .nav-item {
+    display: inline-block;
+    padding-right: 50px;
+  }
+  .nav-item:last-child {
+    padding-right: 0;
+  }
+}
+.nav-link {
+  display: block;
+  padding: 15px 28px;
+  text-decoration: none;
+}
+@media (min-width: 576px) {
+  .nav-link {
+    padding: 0;
+  }
+}
+
+.nav-link:hover {
+  color: inherit;
+}
+
+/********** BURGER **********/
+.menu-btn {
+  display: block;
+  float: right;
+  top: 40px;
+  right: 0;
+  position: relative;
+  width: 30px;
+}
+@media (min-width: 576px) {
+  .menu-btn {
+    display: none;
+  }
+}
+
+.menu-btn:before,
+.menu-btn:after {
+  background-color: #000000;
+  content: '';
+  display: block;
+  height: 2px;
+  transition: all 200ms ease-in-out;
+}
+
+.menu-btn:before {
+  box-shadow: 0 10px 0 #000000;
+  margin-bottom: 18px;
+}
+
+#toggle {
+  position: absolute;
+  left: -100vw;
+}
+
+#toggle:checked ~ .nav {
+  display: block;
+}
+@media (max-width: 575.98px) {
+  body #toggle:checked ~ .nav {
+    height: 99999px;
+    min-height: 100vh;
+  }
+}
+#toggle:checked ~ .menu-btn:before {
+  box-shadow: 0 0 0 #000000;
+  transform: translateY(10px) rotate(45deg);
+}
+#toggle:checked ~ .menu-btn:after {
+  transform: translateY(-10px) rotate(-45deg);
+}
