@@ -6,7 +6,7 @@ A simple navigation with a burger nav dropdown appearing on sub 576px. When the 
 
 ## Styling
 
-Applying `overflow-x: hidden;` to the html tag allows up to give the nav menu and exorbitant height. This makes sure the opacity covers all the page content. At the same time we conditionally apply `overflow: hidden;` to the body tag to hide the excess nav content.
+Applying `overflow-x: hidden;` to the html tag allows us to give the nav menu an exorbitant height. This makes sure the opacity covers all the page content. At the same time we conditionally apply `overflow: hidden;` to the body tag to hide the excess nav content.
 
 ![css nav screenshot](./images/screenshot.png 'Screenshot')
 
